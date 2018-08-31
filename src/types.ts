@@ -1,6 +1,5 @@
 import { ECSignature } from '@0xproject/types';
 import { JSONRPCRequestPayload } from 'ethereum-types';
-import HDNode = require('hdkey');
 
 export interface LedgerCommunicationClient {
     close: () => Promise<void>;
@@ -95,10 +94,6 @@ export interface PartialTxParams {
 
 export type DoneCallback = (err?: Error) => void;
 
-export interface LedgerCommunication {
-    close_async: () => Promise<void>;
-}
-
 export interface ResponseWithTxParams {
     raw: string;
     tx: PartialTxParams;
@@ -109,21 +104,6 @@ export enum WalletSubproviderErrors {
     DataMissingForSignPersonalMessage = 'DATA_MISSING_FOR_SIGN_PERSONAL_MESSAGE',
     SenderInvalidOrNotSupplied = 'SENDER_INVALID_OR_NOT_SUPPLIED',
     FromAddressMissingOrInvalid = 'FROM_ADDRESS_MISSING_OR_INVALID',
-}
-export enum LedgerSubproviderErrors {
-    TooOldLedgerFirmware = 'TOO_OLD_LEDGER_FIRMWARE',
-    MultipleOpenConnectionsDisallowed = 'MULTIPLE_OPEN_CONNECTIONS_DISALLOWED',
-}
-
-export enum NonceSubproviderErrors {
-    EmptyParametersFound = 'EMPTY_PARAMETERS_FOUND',
-    CannotDetermineAddressFromPayload = 'CANNOT_DETERMINE_ADDRESS_FROM_PAYLOAD',
-}
-export interface DerivedHDKeyInfo {
-    address: string;
-    baseDerivationPath: string;
-    derivationPath: string;
-    hdKey: HDNode;
 }
 
 export type ErrorCallback = (err: Error | null, data?: any) => void;
