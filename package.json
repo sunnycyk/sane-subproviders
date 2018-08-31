@@ -1,5 +1,5 @@
 {
-    "name": "@0xproject/subproviders",
+    "name": "sane-subproviders",
     "version": "1.0.5",
     "engines": {
         "node": ">=6.12"
