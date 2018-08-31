@@ -59,7 +59,6 @@ typings/
 .env
 
 # built library using in commonjs module syntax
-lib/
 # UMD bundles that export the global variable
 _bundles
 
@@ -86,7 +85,7 @@ packages/contract-wrappers/src/artifacts/
 packages/order-watcher/src/artifacts/
 
 # generated contract watcher
-packages/0x.js/src/generated_contract_wrappers/
+packages/0x.jsg/src/generated_contract_wrappers/
 packages/contracts/generated_contract_wrappers/
 packages/contract-wrappers/src/contract_wrappers/generated/
 packages/metacoin/src/contract_wrappers
