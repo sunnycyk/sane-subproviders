@@ -7,43 +7,18 @@
     "main": "lib/src/index.js",
     "types": "lib/src/index.d.ts",
     "license": "Apache-2.0",
-    "scripts": {
-        "watch_without_deps": "tsc -w",
-        "build": "tsc",
-        "clean": "shx rm -rf lib scripts",
-        "lint": "true  # tslint --project .  # Note: tslint was crashing for me",
-        "test": "true  # Note: There were no tests of RPC subproviders since before the fork",
-        "docs:stage": "node scripts/stage_docs.js",
-        "docs:json": "typedoc --excludePrivate --excludeExternals --target ES5 --json $JSON_FILE_PATH $PROJECT_FILES",
-        "upload_docs_json": "aws s3 cp generated_docs/index.json $S3_URL --profile 0xproject --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --content-type application/json"
-    },
     "dependencies": {
-        "@0xproject/assert": "^1.0.5",
         "@0xproject/types": "^1.0.1-rc.4",
         "@0xproject/typescript-typings": "^1.0.4",
         "@0xproject/utils": "^1.0.5",
-        "@0xproject/web3-wrapper": "^1.2.0",
         "ethereum-types": "^1.0.5",
         "json-rpc-error": "2.0.0",
-        "lodash": "^4.17.5",
-        "web3-provider-engine": "14.0.6"
+        "lodash": "^4.17.5"
     },
     "devDependencies": {
         "@types/ethereumjs-tx": "^1.0.0",
-        "@types/lodash": "4.14.104",
-        "@types/mocha": "^2.2.42",
+        "@types/lodash": "^4.14.104",
         "@types/node": "^8.0.53",
-        "@types/sinon": "^2.2.2",
-        "make-promises-safe": "^1.1.0",
-        "shx": "^0.2.2",
-        "source-map-support": "^0.5.9",
-        "typedoc": "0xProject/typedoc",
-        "typescript": "2.9.2"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "browser": {
-        "ganache-core": false
+        "typescript": "^3.0.3"
     }
 }

@@ -1,10 +1,10 @@
-import { assert } from '@0xproject/assert';
 import { StatusCodes } from '@0xproject/types';
 import { fetchAsync } from '@0xproject/utils';
 import { JSONRPCRequestPayload } from 'ethereum-types';
 import JsonRpcError = require('json-rpc-error');
 
 import { Callback, ErrorCallback } from '../types';
+import { utils } from '../utils';
 
 import { Subprovider } from './subprovider';
 
@@ -17,8 +17,8 @@ export class RPCSubprovider extends Subprovider {
     private readonly _requestTimeoutMs: number;
     constructor(rpcUrl: string, requestTimeoutMs: number = 20000) {
         super();
-        assert.isString('rpcUrl', rpcUrl);
-        assert.isNumber('requestTimeoutMs', requestTimeoutMs);
+        utils.assertString(rpcUrl);
+        utils.assertNumber(requestTimeoutMs);
         this._rpcUrl = rpcUrl;
         this._requestTimeoutMs = requestTimeoutMs;
     }

@@ -1,18 +1,18 @@
-import { assert } from '@0xproject/assert';
 import { addressUtils } from '@0xproject/utils';
 import { JSONRPCRequestPayload, JSONRPCResponsePayload } from 'ethereum-types';
 import * as _ from 'lodash';
 
 import { Callback, ErrorCallback, PartialTxParams, WalletSubproviderErrors } from '../types';
+import { utils } from '../utils';
 
 import { Subprovider } from './subprovider';
 
 export abstract class BaseWalletSubprovider extends Subprovider {
     protected static _validateTxParams(txParams: PartialTxParams): void {
         if (!_.isUndefined(txParams.to)) {
-            assert.isETHAddressHex('to', txParams.to);
+            utils.assertETHAddressHex(txParams.to);
         }
-        assert.isHexString('nonce', txParams.nonce);
+        utils.assertHexString(txParams.nonce);
     }
     private static _validateSender(sender: string): void {
         if (_.isUndefined(sender) || !addressUtils.isAddress(sender)) {
