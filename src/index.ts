@@ -1,4 +1,3 @@
-export import Web3ProviderEngine = require('web3-provider-engine');
 export { ECSignature } from '@0xproject/types';
 
 export { FakeGasEstimateSubprovider } from './subproviders/fake_gas_estimate_subprovider';
