@@ -23,7 +23,7 @@ export class KeepAliveRPCSubprovider extends Subprovider {
     }
     /**
      * This method conforms to the web3-provider-engine interface.
-     * It is called internally by the ProviderEngine when it is this subproviders
+     * It is called internally byover the ProviderEngine when it is this subproviders
      * turn to handle a JSON RPC request.
      * @param payload JSON RPC payload
      * @param next Callback to call if this subprovider decides not to handle the request
@@ -48,7 +48,7 @@ export class KeepAliveRPCSubprovider extends Subprovider {
               headers: headers
             });
         } catch (error) {
-          const statusCode = error.status;
+          const statusCode = error.statusCode;
           switch (statusCode) {
               case StatusCodes.MethodNotAllowed:
                   end(new JsonRpcError.MethodNotFound());

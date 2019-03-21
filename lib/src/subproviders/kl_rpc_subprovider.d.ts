@@ -11,7 +11,7 @@ export declare class KeepAliveRPCSubprovider extends Subprovider {
     constructor(rpcUrl: string, requestTimeoutMs?: number);
     /**
      * This method conforms to the web3-provider-engine interface.
-     * It is called internally by the ProviderEngine when it is this subproviders
+     * It is called internally byover the ProviderEngine when it is this subproviders
      * turn to handle a JSON RPC request.
      * @param payload JSON RPC payload
      * @param next Callback to call if this subprovider decides not to handle the request
