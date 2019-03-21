@@ -35,8 +35,7 @@ export class RPCSubprovider extends Subprovider {
         const finalPayload = Subprovider._createFinalPayload(payload);
         const headers = new Headers({
             Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'Connection' : 'keep-alive'
+            'Content-Type': 'application/json'
         });
 
         let response;
@@ -46,7 +45,7 @@ export class RPCSubprovider extends Subprovider {
                 {
                     method: 'POST',
                     headers,
-                    body: JSON.stringify(finalPayload),
+                    body: JSON.stringify(finalPayload)
                 },
                 this._requestTimeoutMs,
             );
